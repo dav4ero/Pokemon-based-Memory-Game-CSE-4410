@@ -1,0 +1,4 @@
+1.Copy and paste scene controller code
+2.Duplicate the text(TMP) that holds the score in the hierearchy
+3.Rename it to "TimerText(TMP)", and make it a child of the SceneController on the hierarchy
+4.Change text input on inspector to "Shuffle Countdown:"
