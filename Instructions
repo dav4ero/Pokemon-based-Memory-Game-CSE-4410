@@ -1,4 +1,18 @@
+For shuffling mechanism
 1.Copy and paste scene controller code
 2.Duplicate the text(TMP) that holds the score in the hierearchy
 3.Rename it to "TimerText(TMP)", and make it a child of the SceneController on the hierarchy
 4.Change text input on inspector to "Shuffle Countdown:"
+
+For audio
+1.Update sceneController code
+2.Import audio files 
+3.Create script called “AudioController” and paste the code
+4.Create AudioController component from an empty game object
+5.Attach AudioController script to this component
+6.In the AudioController component create 4 audio source components on the inspector
+7.Drag the audio files into the audioClip fields of the audioSource components
+8.On each audio source turn off “play on awake”
+9.On the audioSource component with “ingameAudio” or the background music lower volume to about 0.3
+10.Drag each audio source component into its respective field on the audioController (script) component in the inspector
+11.Go to the sceneController component and in the sceneController (script) component, drag the sound effects into their respective fields on the bottom.
