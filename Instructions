@@ -13,6 +13,6 @@ For audio
 6.In the AudioController component create 4 audio source components on the inspector
 7.Drag the audio files into the audioClip fields of the audioSource components
 8.On each audio source turn off “play on awake”
-9.On the audioSource component with “ingameAudio” or the background music lower volume to about 0.3
+9.On the audioSource components, change volume of each audio as needed.
 10.Drag each audio source component into its respective field on the audioController (script) component in the inspector
 11.Go to the sceneController component and in the sceneController (script) component, drag the sound effects into their respective fields on the bottom.
