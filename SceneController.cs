@@ -31,6 +31,13 @@ public class SceneController : MonoBehaviour
     private float timer = 0f;
     private TMP_Text timerText;
 
+    //Audio variables
+    private AudioController audioController;
+    public AudioClip ingameAudio;
+    public AudioClip MatchAudio;
+    public AudioClip ShuffleAudio;
+    public AudioClip WrongMatchAudio;
+
     public bool canReveal
     {
         get { return secondRevealed == null; }
@@ -53,6 +60,12 @@ public class SceneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Audio controller initilization
+        audioController = GameObject.FindObjectOfType<AudioController>();
+
+        //Play background music on start
+        audioController.PlayGameMusic(ingameAudio);
+
         //Start timer text
         timerText = GetComponentInChildren<TMP_Text>();
         UpdateTimerDisplay();
@@ -137,11 +150,13 @@ public class SceneController : MonoBehaviour
         if (firstRevealed.Id == secondRevealed.Id)
         {
             score++;
+            audioController.PlayMatchMadeSE(MatchAudio);
             //Debug.Log($"Score: {score}");
             scoreLabel.text = $"Score: {score}";
         }
         else
         {
+            audioController.PlayWrongMatchSE(WrongMatchAudio);
             yield return new WaitForSeconds(0.5f);
             firstRevealed.Unreveal();
             secondRevealed.Unreveal();
@@ -151,7 +166,7 @@ public class SceneController : MonoBehaviour
         secondRevealed = null;
     }
 
-    //Coroutine to call shuffle function every set of seconds
+    //Coroutine to call mid-game shuffle function every set of seconds
     private IEnumerator ShuffleTimer()
     {
         while(true)
@@ -182,11 +197,13 @@ public class SceneController : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene("SampleScene");
+        audioController.PlayGameMusic(ingameAudio);
     }
 
     //Function to shuffle cards during the game
     public void ShuffleCards()
     {
+        audioController.PlayShuffleSE(ShuffleAudio);
         //Get instances of cards in the scene
         MemoryCard[] cards = FindObjectsOfType<MemoryCard>();
 
