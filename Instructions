@@ -16,3 +16,8 @@ For audio
 9.On the audioSource components, change volume of each audio as needed.
 10.Drag each audio source component into its respective field on the audioController (script) component in the inspector
 11.Go to the sceneController component and in the sceneController (script) component, drag the sound effects into their respective fields on the bottom.
+
+For looped audio
+1. Copy and paste new code for sceneController and audioController
+2. In the AudioController game object, drag the ingameAudio (background music) into the new field
+3. In the audioSource component that contains the ingameAudio (background music), check the box that says loop
