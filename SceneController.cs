@@ -33,7 +33,6 @@ public class SceneController : MonoBehaviour
 
     //Audio variables
     private AudioController audioController;
-    public AudioClip ingameAudio;
     public AudioClip MatchAudio;
     public AudioClip ShuffleAudio;
     public AudioClip WrongMatchAudio;
@@ -62,9 +61,8 @@ public class SceneController : MonoBehaviour
     {
         //Audio controller initilization
         audioController = GameObject.FindObjectOfType<AudioController>();
-
-        //Play background music on start
-        audioController.PlayGameMusic(ingameAudio);
+        //Restart audio if it is not playing
+        audioController.RestartGameMusic();
 
         //Start timer text
         timerText = GetComponentInChildren<TMP_Text>();
@@ -197,7 +195,6 @@ public class SceneController : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene("SampleScene");
-        audioController.PlayGameMusic(ingameAudio);
     }
 
     //Function to shuffle cards during the game
