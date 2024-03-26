@@ -9,6 +9,28 @@ public class AudioController : MonoBehaviour
     public AudioSource ASGameMusic;
     public AudioSource ASWrongMatch;
 
+    public AudioClip ingameAudio;
+
+    public static AudioController instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void Start()
+    {
+        PlayGameMusic(ingameAudio);
+    }
+
     public void PlayShuffleSE(AudioClip clip)
     {
         ASShuffle.PlayOneShot(clip);
@@ -27,5 +49,13 @@ public class AudioController : MonoBehaviour
     public void PlayGameMusic(AudioClip clip)
     {
         ASGameMusic.PlayOneShot(clip);
+    }
+
+    public void RestartGameMusic()
+    {
+        if(!ASGameMusic.isPlaying)
+        {
+            ASGameMusic.Play();
+        }
     }
 }
