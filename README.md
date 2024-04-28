@@ -1,11 +1,17 @@
 # Pokemon-based-Memory-Game-CSE-4410
 Group Project for CSE 4410
+******************************************
 Members:
 *Michelle Chilcutt:
+
 *Anthony Draper:
+
 *David Forero:
+
 *Jose Ibarra:
+
 *Arturo Perez:
+
 *Aljeandro Razo Martinez:
 *******************************************************
 Description: Creating a 2D Matching Game with Pokemon Elements:
