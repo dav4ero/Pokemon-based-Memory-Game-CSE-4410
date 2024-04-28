@@ -12,7 +12,7 @@ Members:
 
 *Arturo Perez:
 
-*Aljeandro Razo Martinez:
+*Alejandro Razo Martinez:
 *******************************************************
 Description: Creating a 2D Matching Game with Pokemon Elements:
 1. Your Favorite Pokemon Characters
