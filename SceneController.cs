@@ -37,6 +37,10 @@ public class SceneController : MonoBehaviour
     public AudioClip ShuffleAudio;
     public AudioClip WrongMatchAudio;
 
+    //End state variables
+    private int totalPairs;
+    private int pairsMatched;
+
     public bool canReveal
     {
         get { return secondRevealed == null; }
@@ -112,7 +116,11 @@ public class SceneController : MonoBehaviour
                 cardsAdded++;
             }
         }
-        //Shuffle cards with second shuffling algorithm to use that positiong system
+        //End state variable initialization
+        totalPairs = cardIdsForDeck.Length;
+        pairsMatched = 0;
+
+        //Shuffle cards with second shuffling function to use that positiong system
         ShuffleCards();
 
         //Start timer for shuffling cards midgame
@@ -154,6 +162,12 @@ public class SceneController : MonoBehaviour
             audioController.PlayMatchMadeSE(MatchAudio);
             //Debug.Log($"Score: {score}");
             scoreLabel.text = $"Score: {score}";
+            pairsMatched++;
+            //Stop timer and in game shuffling upon matching all
+            if (pairsMatched == totalPairs)
+            {
+                StopCoroutine(ShuffleTimer());
+            }
         }
         else
         {
@@ -176,11 +190,21 @@ public class SceneController : MonoBehaviour
 
             while (timer > 0f)
             {
+                //Stop timer when finished
+                if (pairsMatched == totalPairs)
+                {
+                    timer = 0;
+                    continue;
+                }
                 yield return new WaitForSeconds(1f);
                 timer -= 1f;
                 UpdateTimerDisplay();
             }
-
+            //Stop timer when finished
+            if (pairsMatched == totalPairs)
+            {
+                break;
+            }
             ShuffleCards();
             timer = shuffleInterval;
         }
