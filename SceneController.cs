@@ -47,7 +47,7 @@ public class SceneController : MonoBehaviour
         if (firstRevealed == null)
         {
             firstRevealed = card;
-        } 
+        }
         else
         {
             secondRevealed = card;
@@ -82,7 +82,7 @@ public class SceneController : MonoBehaviour
             for (int j = 0; j < gridRows; j++)
             {
                 //Skip for loop if it exceeds number of cards
-                if(cardsAdded >= numbers.Length)
+                if (cardsAdded >= numbers.Length)
                 {
                     continue;
                 }
@@ -92,7 +92,7 @@ public class SceneController : MonoBehaviour
                 if (i == 0 && j == 0)
                 {
                     card = originalCard;
-                } 
+                }
                 else
                 {
                     card = Instantiate(originalCard) as MemoryCard;
@@ -112,6 +112,9 @@ public class SceneController : MonoBehaviour
                 cardsAdded++;
             }
         }
+        //Shuffle cards with second shuffling algorithm to use that positiong system
+        ShuffleCards();
+
         //Start timer for shuffling cards midgame
         StartCoroutine(ShuffleTimer());
     }
@@ -134,7 +137,7 @@ public class SceneController : MonoBehaviour
     private int[] ProduceDeck(int[] numbers)
     {
         int[] newArray = new int[numbers.Length * 2];
-        for(int i = 0; i < newArray.Length; i += 2)
+        for (int i = 0; i < newArray.Length; i += 2)
         {
             newArray[i] = numbers[i / 2];
             newArray[i + 1] = numbers[i / 2];
@@ -167,7 +170,7 @@ public class SceneController : MonoBehaviour
     //Coroutine to call mid-game shuffle function every set of seconds
     private IEnumerator ShuffleTimer()
     {
-        while(true)
+        while (true)
         {
             timer = shuffleInterval;
 
