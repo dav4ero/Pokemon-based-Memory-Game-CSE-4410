@@ -3,17 +3,17 @@ Group Project for CSE 4410
 ******************************************
 Members:
 
-*Michelle Chilcutt:
+*Michelle Chilcutt
 
-*Anthony Draper:
+*Anthony Draper
 
-*David Forero:
+*David Forero
 
-*Jose Ibarra:
+*Jose Ibarra
 
-*Arturo Perez:
+*Arturo Perez
 
-*Alejandro Razo Martinez:
+*Alejandro Razo Martinez
 *******************************************************
 Description: Creating a 2D Matching Card Game with Pokemon Elements:
 1. Your Favorite Pokemon Characters
