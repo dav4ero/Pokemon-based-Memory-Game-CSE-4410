@@ -8,6 +8,7 @@ public class AudioController : MonoBehaviour
     public AudioSource ASMatchMade;
     public AudioSource ASGameMusic;
     public AudioSource ASWrongMatch;
+    public AudioSource ASEmber;
 
     public AudioClip ingameAudio;
 
@@ -45,7 +46,10 @@ public class AudioController : MonoBehaviour
     {
         ASWrongMatch.PlayOneShot(clip);
     }
-
+    public void PlayEmberSE(AudioClip clip)
+    {
+        ASEmber.PlayOneShot(clip);
+    }
     public void PlayGameMusic(AudioClip clip)
     {
         ASGameMusic.PlayOneShot(clip);
