@@ -15,7 +15,7 @@ Members:
 
 *Alejandro Razo Martinez:
 *******************************************************
-Description: Creating a 2D Matching Game with Pokemon Elements:
+Description: Creating a 2D Matching Card Game with Pokemon Elements:
 1. Your Favorite Pokemon Characters
 2. Pokemon Sound Effects
 3. Pokemon Background Music
