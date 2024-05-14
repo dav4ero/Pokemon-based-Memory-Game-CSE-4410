@@ -1,0 +1,8 @@
+1. Drag and drop MainMenu.cs script into assets.
+2. Drag and drop Canvas.prefab into assets.
+3. Go into Scenes folder
+4. Drag and drop MainMenu.unity file into Scene folder
+5. From Scene folder, drag and drop MainMenu.unity file into heiarchy.
+6. Go to File, and then go to Build Settings
+7. From scene folder, drag and drop MainMenu.unity file into 'Scenes in Build', and close Build settings window.
+
