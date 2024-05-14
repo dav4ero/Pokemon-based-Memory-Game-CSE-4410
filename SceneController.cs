@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-using System.Linq; //Used for shuffling function
+using System.Linq;
+using JetBrains.Annotations;
+using System.Runtime.CompilerServices; //Used for shuffling function
 
 public class SceneController : MonoBehaviour
 {
@@ -36,6 +38,7 @@ public class SceneController : MonoBehaviour
     public AudioClip MatchAudio;
     public AudioClip ShuffleAudio;
     public AudioClip WrongMatchAudio;
+    public AudioClip EmberAudio;
 
     //End state variables
     private int totalPairs;
@@ -151,7 +154,7 @@ public class SceneController : MonoBehaviour
             newArray[i + 1] = numbers[i / 2];
         }
         return newArray;
-    }
+    }   
 
     //Check if the cards clicked match
     private IEnumerator CheckMatch()
@@ -167,6 +170,11 @@ public class SceneController : MonoBehaviour
             if (pairsMatched == totalPairs)
             {
                 StopCoroutine(ShuffleTimer());
+                //add final music here
+            }
+            if(firstRevealed)
+            {
+                audioController.PlayEmberSE(EmberAudio);
             }
         }
         else
@@ -179,6 +187,7 @@ public class SceneController : MonoBehaviour
 
         firstRevealed = null;
         secondRevealed = null;
+        
     }
 
     //Coroutine to call mid-game shuffle function every set of seconds
@@ -222,6 +231,8 @@ public class SceneController : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene("SampleScene");
+
+        //add poke sound here for restart button
     }
 
     //Function to shuffle cards during the game
