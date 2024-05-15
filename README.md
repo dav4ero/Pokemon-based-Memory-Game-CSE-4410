@@ -11,8 +11,6 @@ Members:
 
 *Jose Ibarra
 
-*Arturo Perez
-
 *Alejandro Razo Martinez
 *******************************************************
 Description: Creating a 2D Matching Card Game with Pokemon Elements:
@@ -20,3 +18,4 @@ Description: Creating a 2D Matching Card Game with Pokemon Elements:
 2. Pokemon Sound Effects
 3. Pokemon Background Music
 4. Pokemon Collectibles
+5. Pokemon Aesthetic Menus
