@@ -21,3 +21,14 @@ For looped audio
 1. Copy and paste new code for sceneController and audioController
 2. In the AudioController game object, drag the ingameAudio (background music) into the new field
 3. In the audioSource component that contains the ingameAudio (background music), check the box that says loop
+
+For menu button
+1. Add a new UIButton object to the scene. Name it MenuButton.
+2. Drag the button object to the bottom right of the Canvas and anchor it there. Fix it's dimensions to where it is visible and clear. 
+3. Add the gear.png sprite to the object's Source Image.
+4. Under the Text(TMP) child object of MenuButton, rewrite the text to say "Menu".
+5. Right-click MenuButton and add an Empty Parent object. Name it BackToMenu.
+6. Drag-and-drop the BackToMenu.cs script onto the BackToMenu empty parent object.
+7. In MenuButton's components, press the + symbol on OnClick(). 
+8. Drag-and-drop the BackToMenu empty parent object into the space under "Runtime Only".
+9. Press the drop-down menu to the right of the box and select BackToMenu -> OpenMenu().
