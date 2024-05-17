@@ -1,8 +1,9 @@
-1. Drag and drop MainMenu.cs script into assets.
-2. Drag and drop Canvas.prefab into assets.
-3. Go into Scenes folder
-4. Drag and drop MainMenu.unity file into Scene folder
-5. From Scene folder, drag and drop MainMenu.unity file into heiarchy.
-6. Go to File, and then go to Build Settings
-7. From scene folder, drag and drop MainMenu.unity file into 'Scenes in Build', and close Build settings window.
-
+Drag and drop MainMenu.cs script into assets.
+Drag and drop Canvas.prefab into assets.
+Go into Scenes folder
+Drag and drop MainMenu.unity file into Scene folder
+From Scene folder, drag and drop MainMenu.unity file into heiarchy.
+Go to File, and then go to Build Settings
+From scene folder, drag and drop MainMenu.unity file into 'Scenes in Build', and close Build settings window.
+Add Image child objects to the Canvas and name them Title and Capy. For Title, drag and drop the TitleImg.png sprite into it's respective place. Do the same for Capy with capybara2.gif. Enlarge and place the title screen in the top center of the screen; then anchor it to the top middle. Do the same for Capy, but anchor it to the top right.
+Add the txtboxpng.png sprite to the NormalButton and BackButton objects under the Mode Select Menu parent. 
