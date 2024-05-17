@@ -9,3 +9,5 @@ Add ModeSelectMenu.cs script to Mode Select Menu game object
 Click on NormalModeButton, look at OnClick(), ensure the function is "ModeSelectMenu.NormalSelect". If it is not, drag Mode Select Menu game object into place under "Runtime Only", press on function, select "ModeSelectMenu.NormalSelect".
 Click on BackButton, look at OnClick(), ensure the function is "ModeSelectMenu.GoBack". If it is not, drag Mode Select Menu game object into place under "Runtime Only", press on function, select "ModeSelectMenu.GoBack".
 If backround image does not appear, press on Image object under the Canvas parent object and drag and drop the selected Menu background sprite.
+Add Image child objects to the Canvas and name them Title and Capy. For Title, drag and drop the TitleImg.png sprite into it's respective place. Do the same for Capy with capybara2.gif. Enlarge and place the title screen in the top center of the screen; then anchor it to the top middle. Do the same for Capy, but anchor it to the top right.
+Add the txtboxpng.png sprite to the NormalButton and BackButton objects under the Mode Select Menu parent. 
